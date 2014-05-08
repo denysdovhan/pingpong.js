@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ping-Pong on JavaScript &middot; Denys Dovhan</title>
+	<link rel="stylesheet" type="text/css" href="libs/rainbow.min.css">
+	<meta name="title" content="Ping-Pong - Denys Dovhan">
+	<meta name="description" content="Ping-Pong implemented on HTML Canvas + JavaScript">
+	<meta name="keywords" content="pingpong, canvas, js, javascript, html">
+	<meta name="author" content="Denys Dovhan">
+	<!-- BEGIN Custom Style -->
+	<style type="text/css">
+		footer {
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			height: 100px;
+			margin-top: 20px;
+			border-top: 1px solid #CCC;
+			background-color: #EEE;
+		}
+		
+		footer img {
+			display: block;
+			margin: 20px auto;
+		}
+		.circle {
+			margin-right: 10px;
+		}
+		iframe {
+			margin-bottom: -3px;
+		}
+	</style>
+	<!-- END Custom Style -->
+</head>
+<body>
+	<!-- BEGIN .container -->
+	<div class="container">
+		<!-- BEGIN .banner.rounded -->
+		<div class="banner rounded" style="margin: 250px auto;">
+			<h1>Hello!</h1>
+			<p>Here's a ping-pong implemented on HTML Canvas + JavaScript.</p>
+			<p>
+				<a href="core/game.html" class="btn blue volume large">Start game!</a>
+				<a href="https://github.com/denysdovhan/pingpong.js" class="btn volume small">GitHub</a>
+				<a href="https://github.com/denysdovhan/pingpong.js/issues" class="btn volume small">Issues</a>
+				<small> <strong>Attention!:</strong> For correct work canvas element required latest version of your browser!</small>
+			</p>
+		</div>
+		<!-- END .banner.rounded -->
+
+		<!-- BEGIN {Featured} -->
+		<h1 class="headline">Features <small>A few words about structure of game</small></h1>
+		<p class="lead">Algorithm and idea was taken from article <a href="http://habrahabr.ru/post/116860/">Canvas шаг за шагом: ПОНГ</a>. The game is implemented using the new HTML5-element <strong>Canvas</strong>, which can be used to draw graphics using <strong>JavaScript</strong>. User interface realized on css-framework <a href="https://github.com/denysdovhan/rainbow"><strong>Rainbow</strong> <em>for Lana</em> v0.1.0.</a></p>
+		<!-- END {Featured} -->
+
+		<!-- BEGIN {What is Ping-Pong?} -->
+		<h2>What is Ping-Pong?</h2>
+		<blockquote>
+			<p><strong>Ping-Pong</strong> - is a sport in which two or four players hit a lightweight ball back and forth using a table tennis racket. The game takes place on a hard table divided by a net. Except for the initial serve, players must allow a ball played toward them only one bounce on their side of the table and must return it so that it bounces on the opposite side. Points are scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent's options, giving the hitter a great advantage. When doing so the hitter has a good chance of scoring if the spin is successful.</p>
+			<small>from Wikipedia</small>
+		</blockquote>
+		<!-- END {What is Ping-Pong?} -->
+
+		<!-- BEGIN {HTML} -->
+		<h2>HTML <small>Basic markup</small></h2>
+		<p class="lead">The basis of markup is only one tag <code>canvas</code> with attribute <code>#game</code>.</p>
+		<!-- END {HTML} -->
+
+		<!-- BEGIN {JavaScript} -->
+		<h2>JavaScript <small>Application core</small></h2>
+		<p class="lead">Base script contains a set of methods for draw and reload, cursor position tracking, object interaction during collisions. List of methods:</p>
+		<ul>
+			<li><code>init()</code> - method for initializing variables and parameters. Run method <code>play()</code> and sets to him update interval.</li>
+			<li><code>draw()</code> - method for drawing playing field and game objects.</li>
+			<li><code>rect()</code> - class for creating and drawing game objects.</li>
+			<li><code>playerMove()</code> - method that monitors cursor and controls position racket player.</li>
+			<li><code>update()</code> - method movement game objects and update playing field.</li>
+			<li><code>play()</code> - method that run methods <code>draw()</code> and <code>uptade()</code></li>
+			<li><code>collision()</code> - method that analyzes the collision objects.</li>
+			<li><code>aiMove()</code> - AI method, which is responsible for logic of movement rackets computer.</li>
+		</ul>
+		<p class="lead">Details, see comments in the code.</p>
+		<!-- END {JavaScript} -->
+
+		<!-- BEGIN {Author} -->
+		<h1 class="headline">Author</h1>
+		<p class="lead">
+			<img src="http://denysdovhan.com/api/avatar-64.png" alt="Denys Dovhan" class="circle">
+			<em>Made with love in Ukraine.
+				Follow me on GitHub:</em>
+			<iframe src="http://ghbtns.com/github-btn.html?user=denysdovhan&repo=pingpong.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+			<iframe src="http://ghbtns.com/github-btn.html?user=denysdovhan&repo=pingpong.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+			<iframe src="http://ghbtns.com/github-btn.html?user=denysdovhan&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+		</p>
+		<!-- END {Author} -->
+	</div>
+	<!-- END .container -->
+	<!-- BEGIN footer -->
+	<footer>
+		<a href="http://denysdovhan.com/" title="Denys Dovhan"><img src="http://denysdovhan.com/api/blog-logo-en.png" alt="Denys Dovhan"></a>
+	</footer>
+	<!-- END footer -->
+
+	<!-- BEGIN Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-40496885-1', 'denysdovhan.com');
+	  ga('send', 'pageview');
+	
+	</script>
+	<!-- END Google Analytics -->
+</body>
+</html>
